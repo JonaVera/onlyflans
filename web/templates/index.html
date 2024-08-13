@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>OnlyFlans</title>
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    </head>
+<!-- * Extension de base.html -->
+{% extends 'base.html' %} 
 
-    <body>
-        <h1>Bienvenido a OnlyFlans</h1>
-        <h2>{{mensaje}}</h2>
-        <div class="logo">
-            <img src="{% static 'img/descarga.png' %}" />
-        </div>
-    </body>
-
-</html>
+<!-- * Bloque que contiene todo el Index -->
+{% block 'content' %} 
+<div>
+  <h1>{{message}}</h1>
+</div>
+{% endblock %}

@@ -1,5 +1,5 @@
 """
-URL configuration for onlyflans project.
+URL configuration for ventas project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -15,22 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-# # Sin modularizar las Routes
-# from django.contrib import admin
-# from django.urls import path
-# ## importamos funciones creadas (sin modularizar):
-# from web.views import hola_text, hola_json, hola_template
 
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('text/', hola_text),
-#     path('json/',  hola_json),
-#     path('template/', hola_template),
-# ]
-
-#* Modularizacion de Routes
+# * Modularizacion de Routes
 from django.contrib import admin
 from django.urls import path, include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
