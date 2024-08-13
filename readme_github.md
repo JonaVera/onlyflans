@@ -12,5 +12,10 @@
 * Me muestra todo lo que hay que subir
     --> git add .
     --> git commit -m "init project onlyflans"
-## 6. Sunimos al repositorio (empuja todo)
+## 6. Subimos al repositorio (empuja todo)
+    --> git push origin master
+
+## Pasos para subir cambios ##
+    --> git add .
+    --> git commit -m "name" 
     --> git push origin master
