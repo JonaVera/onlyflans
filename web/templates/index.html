@@ -1,13 +1,41 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% block content %}
-<div style="text-align: center;
-            margin-left: 300px; 
-            margin-right: 300px;
-            margin-top: 20px;
-            margin-bottom: 20px;">
-            
-    <h2>Bienvenido Cliente</h2>
+<div class="container">
+    <h2 style="text-align: center; margin-top: 20px;">!Índice!</h2>
+    <div class="row">
+        {% for flan in public_flans %}
+        <div class="col-6 col-md-3">
+            <div class="card mb-4">
+                <img src="{{ flan.image_url }}" alt="Flan" class="card-img-top">  
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ flan.name }}  
+                    </h5>
+                    <p class="card-text">
+                        {{ flan.description }} 
+                    </p>
+                    <p style="text-align: center;">
+                      Precio:  {{ flan.price }}
+                    </p>
+                    <p style="text-align: center;">
+                      Stock: {{ flan.stock }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
+
+<style>
+    .card-img-top {
+        width: 100%;          /* Asegura que la imagen ocupe todo el ancho del contenedor */
+        height: 200px;       /* Establece una altura fija para todas las imágenes */
+        object-fit: cover;   /* Mantiene la proporción y recorta si es necesario */
+    }
+</style>
 {% endblock %}
+
+
 
