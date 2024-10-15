@@ -96,7 +96,3 @@ la mejor forma de crear las route.
 * Probamos nuestra web
 * salimos del entorno y proyecto con el comando
     --> deactivate
-
-## Pendiente practicar La modularizacion de routes ##
-## Integrantes 
---> Jonathan Vera
