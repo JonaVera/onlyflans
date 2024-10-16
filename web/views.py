@@ -1,7 +1,7 @@
 
 from django.shortcuts import render, redirect
-from .models import Flan, ContactForm
-from .forms import ContactFormForm
+from .models import Flan, ContactForm, Testimonio
+from .forms import ContactFormForm, TestimonioForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 
@@ -32,3 +32,17 @@ def contact(req):
 
 def success(req):
     return render(req, 'success.html', {})
+
+def testimonio(request):
+    testimonios = Testimonio.objects.all().order_by('-created_at')
+    return render(request, 'testimonio.html', {'testimonio': testimonios})
+
+def crear_testimonio(request):
+    if request.method == 'POST':
+        form = TestimonioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('testimonio')  # Redirige a la página de testimonios después de crear
+    else:
+        form = TestimonioForm()
+    return render(request, 'crear_testimonio.html', {'form': form})

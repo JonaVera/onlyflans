@@ -7,4 +7,6 @@ urlpatterns = [
     path('bienvenido/', views.welcome),
     path('contacto/', views.contact, name='contacto'),
     path('exito/', views.success, name='success'),
+    path('testimonio/', views.testimonio, name='testimonio'),
+    path('crear_testimonio/', views.crear_testimonio, name='crear_testimonio'),
 ]

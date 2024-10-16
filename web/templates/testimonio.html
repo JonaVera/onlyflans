@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 style="text-align: center; margin-top: 20px;">Testimonios</h2>
+<div class="testimonios-container" style="margin-bottom: 20px;">
+    {% for testimonio in testimonio %}
+    <div class="testimonio-card">
+        <h5>{{ testimonio.name }}</h5>
+        <p>{{ testimonio.mensaje }}</p>
+        <small>{{ testimonio.created_at }}</small>
+    </div>
+    {% empty %}
+    <p>No hay testimonios disponibles.</p>
+    {% endfor %}
+</div>
+{% endblock %}

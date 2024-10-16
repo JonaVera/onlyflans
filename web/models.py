@@ -20,3 +20,11 @@ class ContactForm(models.Model):
     
     def __str__(self):
         return self.customer_name
+    
+class Testimonio(models.Model):
+    name = models.CharField(max_length=100)
+    mensaje = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
