@@ -1,25 +1,37 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <h2 style="text-align: center; margin-top: 20px;">!Índice!</h2>
+
+<div class="container" style="margin-top: 20px;">
     <div class="row">
+        <div class="col">
+            <div class="h-100 p-5 text-white bg-dark rounded-3 border border-light">
+                <!-- Añadido border y border-light -->
+                <h2>Nuestros Productos</h2>
+                <p>OnlyFlans nace en el año 2024 buscando entregar flanes de calidad</p>
+                <a href="/acerca" class="btn btn-outline-light">Conoce más</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" style="margin-top: 20px;">
         {% for flan in public_flans %}
         <div class="col-6 col-md-3">
             <div class="card mb-4">
-                <img src="{{ flan.image_url }}" alt="Flan" class="card-img-top">  
+                <img src="{{ flan.image_url }}" alt="Flan" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">
-                        {{ flan.name }}  
+                        {{ flan.name }}
                     </h5>
                     <p class="card-text">
-                        {{ flan.description }} 
+                        {{ flan.description }}
                     </p>
                     <p style="text-align: center;">
-                      Precio:  {{ flan.price }}
+                        Precio: {{ flan.price }}
                     </p>
                     <p style="text-align: center;">
-                      Stock: {{ flan.stock }}
+                        Stock: {{ flan.stock }}
                     </p>
                 </div>
             </div>
@@ -30,12 +42,12 @@
 
 <style>
     .card-img-top {
-        width: 100%;          /* Asegura que la imagen ocupe todo el ancho del contenedor */
-        height: 200px;       /* Establece una altura fija para todas las imágenes */
-        object-fit: cover;   /* Mantiene la proporción y recorta si es necesario */
+        width: 100%;
+        /* Asegura que la imagen ocupe todo el ancho del contenedor */
+        height: 200px;
+        /* Establece una altura fija para todas las imágenes */
+        object-fit: cover;
+        /* Mantiene la proporción y recorta si es necesario */
     }
 </style>
 {% endblock %}
-
-
-

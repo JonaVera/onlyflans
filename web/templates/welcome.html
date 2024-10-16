@@ -1,37 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2 style="text-align: center; margin-top: 20px;">¡Bienvenido Cliente!</h2>
-<div style="text-align: center; 
-            text-align: justify;
-            margin-left: 300px; 
-            margin-right: 300px;
-            margin-top: 20px;
-            margin-bottom: 20px;">
-
-    <p>¡Bienvenido a nuestro sitio de Flanes! Estamos encantados de que estés aquí. Descubre nuestra amplia selección de
-        flanes, desde los tradicionales hasta las versiones más creativas. Regístrate para acceder a promociones
-        exclusivas y novedades. ¡Prepárate para endulzar tu día con nuestros irresistibles postres!</p>
-</div>
-
-<div class="container">
+<div class="container" style="margin-top: 20px;">
     <div class="row">
+        <div class="col">
+            <div class="h-100 p-5 text-white bg-dark rounded-3">
+                <h2>Bienvenido {{ user.get_username }}</h2>
+                <p>Tenemos una lista exclusiva para ti. ¿Quieres conocer más?</p>
+                <p>¡Bienvenido a nuestro sitio de Flanes! Estamos encantados de que estés aquí. Descubre nuestra amplia
+                    selección de flanes, desde los tradicionales hasta las versiones más creativas. Regístrate para
+                    acceder a promociones
+                    exclusivas y novedades. ¡Prepárate para endulzar tu día con nuestros irresistibles postres!</p>
+                <a href="/contacto" class="btn btn-outline-light">Contáctanos</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;">
         {% for flan in private_flans %}
         <div class="col-6 col-md-3">
             <div class="card mb-4">
-                <img src="{{ flan.image_url }}" alt="Flan" class="card-img-top">  
+                <img src="{{ flan.image_url }}" alt="Flan" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">
-                        {{ flan.name }}  
+                        {{ flan.name }}
                     </h5>
                     <p class="card-text">
-                        {{ flan.description }} 
+                        {{ flan.description }}
                     </p>
                     <p style="text-align: center;">
-                      Precio:  {{ flan.price }}
+                        Precio: {{ flan.price }}
                     </p>
                     <p style="text-align: center;">
-                      Stock: {{ flan.stock }}
+                        Stock: {{ flan.stock }}
                     </p>
                 </div>
             </div>
@@ -42,9 +43,9 @@
 
 <style>
     .card-img-top {
-        width: 100%;          /* Asegura que la imagen ocupe todo el ancho del contenedor */
-        height: 200px;       /* Establece una altura fija para todas las imágenes */
-        object-fit: cover;   /* Mantiene la proporción y recorta si es necesario */
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
     }
 </style>
 {% endblock %}

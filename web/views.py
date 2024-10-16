@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from .models import Flan, ContactForm
 from .forms import ContactFormForm
 from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def index(req):
@@ -12,6 +14,7 @@ def index(req):
 def about(req):
     return render(req, 'about.html')
 
+@login_required
 def welcome(req):
     private_flans = Flan.objects.filter(is_private=True)
     return render(req, 'welcome.html',{'private_flans': private_flans})
